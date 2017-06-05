@@ -22,9 +22,9 @@ That's it.
 
 DOSY defines a family of truly superb, super-simple, variable-state PRNGs ( pseudorandom number generators ) / CSPRNGs ( cryptogrpahically secure pseudorandom number generators ), that are both extraordinarily simple, and pass PractRand.
 
-# Using
+# Install & Using
 
-In Node.js just `npm install dosy` and 
+If you're using node you can just `npm install dosy` and 
 
 ```js
 const dosy = require('dosy');
@@ -41,6 +41,15 @@ for( const rvar of rng ) {
   console.log( rvar );
   if ( count++ > 100 ) break;
 }
+```
+
+To run it in the browser, just download the `index.js` file, save it as `dosy.js`, host it somewhere and load it as a script
+
+```html
+  <script src=/dosy.js></script>
+  <script>
+    const rng = dosy.d451();
+  </script>
 ```
 
 # Use Cases
