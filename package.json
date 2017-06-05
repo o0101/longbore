@@ -1,0 +1,28 @@
+{
+  "name": "dosy",
+  "version": "1.0.0",
+  "description": "8-bit random number generators that pass PracRand",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dosaygo-coder-0/dosy.git"
+  },
+  "keywords": [
+    "prng",
+    "rng",
+    "csprng",
+    "pracrand",
+    "random",
+    "number",
+    "generator"
+  ],
+  "author": "Kris <dontmailme@gmail.com> (https://2yago.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dosaygo-coder-0/dosy/issues"
+  },
+  "homepage": "https://github.com/dosaygo-coder-0/dosy#readme"
+}
