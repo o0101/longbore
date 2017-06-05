@@ -76,4 +76,7 @@ You can access the interal state of the generator ( after the first value has be
 
 You can implement your own key scheduling algorithm to include a key to seed the generator, like I did. I used a "sponge" construction, with the first 5 bytes set to absorb the key, by successive rounds, and the last 40 bytes set to the "spare capacity". This key scheduling algorithm worked well, and it's not the only way you can seed this family of generators.
 
+# Links
+
+- [dosy on npm](https://www.npmjs.com/package/dosy)
 
