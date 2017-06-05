@@ -22,6 +22,27 @@ That's it.
 
 DOSY defines a family of truly superb, super-simple, variable-state PRNGs ( pseudorandom number generators ) / CSPRNGs ( cryptogrpahically secure pseudorandom number generators ), that are both extraordinarily simple, and pass PractRand.
 
+# Using
+
+In Node.js just `npm install dosy` and 
+
+```js
+const dosy = require('dosy');
+const rng = dosy.d451();
+
+console.log( rng.next().value );
+```
+
+The RNGs are wrapped as [generators](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators), so you can easily do:
+
+```js
+let count = 0;
+for( const rvar of rng ) {
+  console.log( rvar );
+  if ( count++ > 100 ) break;
+}
+```
+
 # Use Cases
 
 Dosy is not super fast ( it iterates its entire state once for each output byte ), and it was designed to mostly generate short keystreams to encrypt short messages, under 4K in length. 
