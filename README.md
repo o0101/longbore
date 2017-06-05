@@ -1,8 +1,8 @@
 # DOSY
 
-Memorizable, simple 8-bit random number generators that pass PracRand.
+Memorizable, simple 8-bit random number generators that pass PractRand.
 
-The found function is only a few lines long.
+The round function is only a few lines long.
 
 ```js
   function round() {
@@ -20,7 +20,7 @@ The found function is only a few lines long.
 
 That's it.
 
-DOSY defines a family of truly superb, super-simple PRNGs ( pseudorandom number generators ) / CSPRNGs ( cryptogrpahically secure pseudorandom number generators ), that are both extraordinarily simple, and pass PracRand.
+DOSY defines a family of truly superb, super-simple, variable-state PRNGs ( pseudorandom number generators ) / CSPRNGs ( cryptogrpahically secure pseudorandom number generators ), that are both extraordinarily simple, and pass PractRand.
 
 # Use Cases
 
@@ -28,11 +28,17 @@ Dosy is not super fast ( it iterates its entire state once for each output byte 
 
 # Test Results
 
-Dosy was tested using [PracRand](http://pracrand.sourceforge.net/) which is a [top-notch bias finder for RNGs](https://stackoverflow.com/a/27160492/7652736). Despite being so simple to implement, both D451 and D453 passed PracRand ( at 16 MB, 32 MB and 64 MB, no other sequence lengths were generated ). No other values of the parameters have been tested so far. 
+Dosy was tested using [PractRand](http://pracrand.sourceforge.net/) which is a [top-notch bias finder for RNGs](https://stackoverflow.com/a/27160492/7652736). Despite being so simple to implement, both D451 and D453 passed PractRand ( at 16 MB, 32 MB and 64 MB, no other sequence lengths were generated ). No other values of the parameters have been tested so far. 
 
 # Naming
 
-The DOSY structure defines a family of generators specified by their state length ( in bytes ) and a bit shift ( in bits ). Each algorithm is named like DXXY ( where XX or XXX or XXXX and so on, is the state length ) and Y is the bit shift. 
+The DOSY structure defines a family of generators specified by their state length ( in bytes ) and a bit shift ( in bits ). Each algorithm is named like 
+
+`D451 - 45 bytes of state, 1 bit of shift`
+
+or, more generally like, `DXXY`.
+
+Where `XX` ( or `XXX` or `XXXX` and so on, is the state length ) and `Y` is the bit shift. 
 
 # Key Scheduling
 
