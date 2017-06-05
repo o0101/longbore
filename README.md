@@ -1,6 +1,26 @@
 # DOSY
 
-A family of truly superb, super-simple PRNGs ( pseudorandom number generators ) / CSPRNGs ( cryptogrpahically secure pseudorandom number generators ), that are both extraordinarily simple, and pass PracRand.
+Memorizable, simple 8-bit random number generators that pass PracRand.
+
+The found function is only a few lines long.
+
+```js
+  function round() {
+    let j = 44;
+    let sum = 1;
+    for( let i = 0; i < 45; i++ ) {
+      s[j] ^= (s[i] >> 1) ^ (sum << 1);
+      s[i] += s[j] + 1;
+      j = ( j + 1 ) % 45;
+      sum += s[i];
+    }
+    return sum & 255;
+  }
+```
+
+That's it.
+
+DOSY defines a family of truly superb, super-simple PRNGs ( pseudorandom number generators ) / CSPRNGs ( cryptogrpahically secure pseudorandom number generators ), that are both extraordinarily simple, and pass PracRand.
 
 # Use Cases
 
