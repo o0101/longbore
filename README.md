@@ -58,7 +58,21 @@ Dosy is not super fast ( it iterates its entire state once for each output byte 
 
 # Test Results
 
-Dosy was tested using [PractRand](http://pracrand.sourceforge.net/) which is a [top-notch bias finder for RNGs](https://stackoverflow.com/a/27160492/7652736). Despite being so simple to implement, both D451 and D453 passed PractRand ( at 16 MB, 32 MB and 64 MB, no other sequence lengths were generated ). No other values of the parameters have been tested so far. 
+Dosy was tested using [PractRand](http://pracrand.sourceforge.net/) which is a [top-notch bias finder for RNGs](https://stackoverflow.com/a/27160492/7652736). Despite being so simple to implement, both D451 and D453 passed PractRand ( at 16 MB, 32 MB and 64 MB, no other sequence lengths were generated ). So far the following values are tested:
+
+```js
+{
+  d31: "fails", // 24 bit 
+  d41: "passes", // 32 bit 
+  d51: "passes", // 40 bit 
+  d81: "passes", // 64 bit
+  d451: "passes", // 360 bit
+  d452: "passes",
+  d453: "passes",
+  d454: "passes",
+  d455: "passes"
+}
+```
 
 # Naming
 
