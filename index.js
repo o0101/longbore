@@ -4,9 +4,9 @@
   // For ref of PracRand - http://pracrand.sourceforge.net/
   // To access the state ( to say, 'key' the generator ), pass in a 'surface' object
   const dosy = {
-    d451: surface => generator( 45, 1, surface ), // passes PracRand
-    d453: surface => generator( 45, 3, surface ), // passes PracRand
-    raw: generator // other values are untested. Set your own!
+    d451: surface => iterator( 45, 1, surface ), // passes PracRand
+    d453: surface => iterator( 45, 3, surface ), // passes PracRand
+    custom: iterator // other values are untested. Set your own!
   };
 
   // Node.js or Browser, either is fine
@@ -25,13 +25,48 @@
     return sum & 255;
   }
 
-  // A generator wrapper to create the state and turn the round function
-  function *generator( state_sz = 45 /* bytes */, shift = 1 /* bits */, surface = {} /* .s is the state */) {
+  // An iterator wrapper to create the state and turn the round function
+  function iterator( state_sz = 45 /* bytes */, shift = 1 /* bits */, surface = {} /* .s is the state */) {
     const s = new Uint8Array(state_sz);
+    const update_state = update.bind( null, s, state_sz, shift );
     expose( surface, 'state', s );
-    while( true ) {
-      yield update(s, state_sz, shift);
-    }
+    return {
+      round() {
+        return update_state();
+      },
+      [Symbol.iterator]() {
+        return make_iterable( { 
+          func_source: update_state, 
+          max_iterations: this.length 
+        } );
+      }
+    };
+  }
+
+  function make_iterable( { 
+      func_source : func_source = () => 0, 
+      max_iterations : max_iterations = null } = {} 
+    ) {
+      if ( Number.isInteger(max_iterations) ) {
+        const length = max_iterations;
+        let i = 0;
+        return {
+          next() {
+            if ( i < length ) {
+              i++;
+              return { value : func_source(), done : false };
+            } else {
+              return { done: true }; 
+            }
+          }
+        };
+      } else {
+        return {
+          next() {
+            return { value : func_source(), done : false };
+          }
+        }
+      }
   }
 
   function expose( obj, key, val ) {

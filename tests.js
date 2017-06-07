@@ -22,7 +22,7 @@
       const megs = process.argv[4];
       const out_file = process.argv[5];
       
-      const rng = dosy.raw( state_sz, shift );
+      const rng = dosy.custom( state_sz, shift );
 
       console.log( `Generating ${megs} Mb of output with parameters ${state_sz}${shift} to file ${out_file}...` );
       test( rng, megs, out_file );

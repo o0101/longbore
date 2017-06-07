@@ -33,13 +33,13 @@ const rng = dosy.d451();
 console.log( rng.next().value );
 ```
 
-The RNGs are wrapped as [generators](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators), so you can easily do:
+The RNGs are wrapped as [iterators](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators), so you can easily do:
 
 ```js
 let count = 0;
+rng.length = 100;  // note the special length property puts a limit on a single iteration
 for( const rvar of rng ) {
   console.log( rvar );
-  if ( count++ > 100 ) break;
 }
 ```
 
@@ -83,6 +83,31 @@ The DOSY structure defines a family of generators specified by their state lengt
 or, more generally like, `DXXY`.
 
 Where `XX` ( or `XXX` or `XXXX` and so on, is the state length ) and `Y` is the bit shift. 
+
+# Customization
+
+You can set your own parameters:
+
+```js
+  const rng = dosy.custom( 123, 2 );
+```
+
+# Iteration
+
+The RNGs created by dosy respect the normal JavaScript iteration protocol. But they also can be run by simple calling the `round()` function on the RNG object as well.
+
+```js
+rng.next().value; // OK
+rng[Symbol.iterator]().next().value; // OK
+rng.round(); // OK
+```
+
+And these RNGs also have an extension to the iterator protocol. If you set their `.length` property you can control the length of the iteration to be whatever you like. Without setting length as a number, the iteration is infinite.
+
+```js
+rng.length = 10;
+for( const rvar of rng ) console.log( rvar ); // 10 values
+```
 
 # Key Scheduling
 
