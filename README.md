@@ -30,7 +30,7 @@ If you're using node you can just `npm install dosy` and
 const dosy = require('dosy');
 const rng = dosy.d451();
 
-console.log( rng.next().value );
+console.log( rng.round() );
 ```
 
 The RNGs are wrapped as [iterators](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators), so you can easily do:
@@ -97,7 +97,6 @@ You can set your own parameters:
 The RNGs created by dosy respect the normal JavaScript iteration protocol. But they also can be run by simple calling the `round()` function on the RNG object as well.
 
 ```js
-rng.next().value; // OK
 rng[Symbol.iterator]().next().value; // OK
 rng.round(); // OK
 ```
