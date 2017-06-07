@@ -1,6 +1,6 @@
 {
   "name": "dosy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "8-bit random number generators that pass PracRand",
   "main": "index.js",
   "scripts": {

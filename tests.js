@@ -40,13 +40,13 @@
     const batch = MEG;
     let bytes = megs*MEG;
     let str = ''; 
+    rng.length = bytes;
     for( const rbyte of rng ) {
       str += String.fromCharCode(rbyte);
       if ( str.length >= batch ) {
         fs.appendFileSync( fileName + ".rng.bin", str, 'binary' );
         str = '';
       }
-      if ( bytes-- == 0 ) break;
     }
   }
 }
