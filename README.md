@@ -2,6 +2,9 @@
 
 Memorizable, simple 8-bit random number generators that pass PractRand.
 
+[![https://nodei.co/npm/dosy.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/dosy.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tifuhash)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/dosy/issues)
+
 ## Latest News
 
 DOSY passes Dieharder and PractRand. Oooh yeah!
