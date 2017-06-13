@@ -2,6 +2,14 @@
 
 Memorizable, simple 8-bit random number generators that pass PractRand.
 
+## Latest News
+
+DOSY passes Dieharder and PractRand. Oooh yeah!
+
+Testing on 1 Gb initially produced 1 FAILED ( rgb_lagged_sums 31 ), and I concluded this was because the test was looping the 1 Gb input so many times and finding correlations that otherwise were not present. When I truncated the input to a large prime less than 1 Gb this test passed, adding support for my theory as to why it failed. Oooh yeah!
+
+## Simplicity by Design
+
 The round function is only a few lines long.
 
 ```js
