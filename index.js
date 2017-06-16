@@ -1,16 +1,16 @@
 "use strict";
 {
-  // DOSY - A family of 8-bit PRNGs ( CSPRNGs ) that are extraordinarily simple & pass PracRand
+  // DOSYRNG - A family of 8-bit PRNGs ( CSPRNGs ) that are extraordinarily simple & pass PracRand
   // For ref of PracRand - http://pracrand.sourceforge.net/
   // To access the state ( to say, 'key' the generator ), pass in a 'surface' object
-  const dosy = {
+  const dosyrng = {
     d451: surface => iterator( 45, 1, surface ), // passes PracRand
     d453: surface => iterator( 45, 3, surface ), // passes PracRand
     custom: iterator // other values are untested. Set your own!
   };
 
   // Node.js or Browser, either is fine
-  try { module.exports = dosy; } catch( e ) { Object.assign( self, { dosy } ); }
+  try { module.exports = dosyrng; } catch( e ) { Object.assign( self, { dosyrng } ); }
 
   // The main DOSY round function very simple and easy to memorize
   function update( s, SZ, shift ) {

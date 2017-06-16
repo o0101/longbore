@@ -1,13 +1,13 @@
-# dosy
+# dosyrng
 
 Memorizable, simple 8-bit random number generators that pass Dieharder and PractRand.
 
-[![https://nodei.co/npm/dosy.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/dosy.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tifuhash)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/dosy/issues)
+[![https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tifuhash)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/dosyrng/issues)
 
 ## Latest News
 
-dosy passes Dieharder and PractRand. Oooh yeah!
+dosyrng passes Dieharder and PractRand. Oooh yeah!
 
 Testing on 1 Gb initially produced 1 FAILED ( rgb_lagged_sums 31 ), and I concluded this was because the test was looping the 1 Gb input so many times and finding correlations that otherwise were not present. When I truncated the input to a large prime less than 1 Gb this test passed, adding support for my theory as to why it failed. Oooh yeah!
 
@@ -35,11 +35,11 @@ DOSY defines a family of truly superb, super-simple, variable-state PRNGs ( pseu
 
 # Install & Using
 
-If you're using node you can just `npm install dosy` and 
+If you're using node you can just `npm install dosyrng` and 
 
 ```js
-const dosy = require('dosy');
-const rng = dosy.d451();
+const dosyrng = require('dosyrng');
+const rng = dosyrng.d451();
 
 console.log( rng.round() );
 ```
@@ -54,12 +54,12 @@ for( const rvar of rng ) {
 }
 ```
 
-To run it in the browser, just download the `index.js` file, save it as `dosy.js`, host it somewhere and load it as a script
+To run it in the browser, just download the `index.js` file, save it as `dosyrng.js`, host it somewhere and load it as a script
 
 ```html
-  <script src=/dosy.js></script>
+  <script src=/dosyrng.js></script>
   <script>
-    const rng = dosy.d451();
+    const rng = dosyrng.d451();
   </script>
 ```
 
@@ -100,12 +100,12 @@ Where `XX` ( or `XXX` or `XXXX` and so on, is the state length ) and `Y` is the 
 You can set your own parameters:
 
 ```js
-  const rng = dosy.custom( 123, 2 );
+  const rng = dosyrng.custom( 123, 2 );
 ```
 
 # Iteration
 
-The RNGs created by dosy respect the normal JavaScript iteration protocol. But they also can be run by simple calling the `round()` function on the RNG object as well.
+The RNGs created by dosyrng respect the normal JavaScript iteration protocol. But they also can be run by simple calling the `round()` function on the RNG object as well.
 
 ```js
 rng[Symbol.iterator]().next().value; // OK
@@ -127,5 +127,5 @@ You can implement your own key scheduling algorithm to include a key to seed the
 
 # Links
 
-- [dosy on npm](https://www.npmjs.com/package/dosy)
+- [dosyrng on npm](https://www.npmjs.com/package/dosyrng)
 
