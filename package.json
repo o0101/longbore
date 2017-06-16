@@ -1,6 +1,6 @@
 {
   "name": "dosyrng",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "tunable 8-bit random number generators that pass PractRand and Dieharder",
   "main": "index.js",
   "scripts": {
