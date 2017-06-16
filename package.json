@@ -1,7 +1,7 @@
 {
-  "name": "dosy",
+  "name": "dosyrng",
   "version": "1.0.2",
-  "description": "8-bit random number generators that pass PracRand",
+  "description": "tunable 8-bit random number generators that pass PractRand and Dieharder",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,8 @@
     "url": "git+https://github.com/dosaygo-coder-0/dosy.git"
   },
   "keywords": [
+    "dosy",
+    "tunable",
     "prng",
     "rng",
     "csprng",
@@ -22,7 +24,7 @@
   "author": "Kris <dontmailme@gmail.com> (https://2yago.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dosaygo-coder-0/dosy/issues"
+    "url": "https://github.com/dosaygo-coder-0/dosyrng/issues"
   },
-  "homepage": "https://github.com/dosaygo-coder-0/dosy#readme"
+  "homepage": "https://github.com/dosaygo-coder-0/dosyrng#readme"
 }
