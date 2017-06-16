@@ -2,7 +2,7 @@
 
 Memorizable, simple 8-bit random number generators that pass Dieharder and PractRand.
 
-[![https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tifuhash)
+[![https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/dosyrng)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/dosyrng/issues)
 
 ## Latest News
