@@ -1,13 +1,13 @@
-# dosyrng
+# Longbore
 
-Memorizable, simple 8-bit random number generators that pass Dieharder and PractRand.
+Memorizable, simple random number generator with up to infinite internal state that pass Dieharder and PractRand. Set the state as big as you want. 
 
 [![https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/dosyrng)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/dosyrng/issues)
 
 ## Latest News
 
-dosyrng passes Dieharder and PractRand. Oooh yeah!
+Longbore  passes Dieharder and PractRand. Oooh yeah!
 
 Testing on 1 Gb initially produced 1 FAILED ( rgb_lagged_sums 31 ), and I concluded this was because the test was looping the 1 Gb input so many times and finding correlations that otherwise were not present. When I truncated the input to a large prime less than 1 Gb this test passed, adding support for my theory as to why it failed. Oooh yeah!
 
@@ -38,8 +38,8 @@ DOSY defines a family of truly superb, super-simple, variable-state PRNGs ( pseu
 If you're using node you can just `npm install dosyrng` and 
 
 ```js
-const dosyrng = require('dosyrng');
-const rng = dosyrng.d451();
+const longbore = require('dosyrng');
+const rng = longbore.d451();
 
 console.log( rng.round() );
 ```
@@ -54,12 +54,12 @@ for( const rvar of rng ) {
 }
 ```
 
-To run it in the browser, just download the `index.js` file, save it as `dosyrng.js`, host it somewhere and load it as a script
+To run it in the browser, just download the `index.js` and host it somewhere and load it as a script
 
 ```html
-  <script src=/dosyrng.js></script>
+  <script src=/longbore.js></script>
   <script>
-    const rng = dosyrng.d451();
+    const longbore = dosyrng.d451();
   </script>
 ```
 
@@ -105,7 +105,7 @@ You can set your own parameters:
 
 # Iteration
 
-The RNGs created by dosyrng respect the normal JavaScript iteration protocol. But they also can be run by simple calling the `round()` function on the RNG object as well.
+The RNGs created by Longbore respect the normal JavaScript iteration protocol. But they also can be run by simple calling the `round()` function on the RNG object as well.
 
 ```js
 rng[Symbol.iterator]().next().value; // OK
@@ -123,9 +123,9 @@ for( const rvar of rng ) console.log( rvar ); // 10 values
 
 You can access the interal state of the generator ( after the first value has been generated ). You can do whatever you like to this state. The state is a [Typed Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) so standard Typed Array APIs apply. 
 
-You can implement your own key scheduling algorithm to include a key to seed the generator, like I did. I used a "sponge" construction, with the first 5 bytes set to absorb the key, by successive rounds, and the last 40 bytes set to the "spare capacity". This key scheduling algorithm worked well, and it's not the only way you can seed this family of generators.
+You can implement your own key scheduling algorithm to include a key to seed the generator, like I did. I used a "sponge" construction, with the first 5 bytes set to absorb the key, by successive rounds, and the last 40 bytes set to the "spare capacity". This key scheduling algorithm worked well, and it's not the only way you can seed this family of generators. 
 
 # Links
 
-- [dosyrng on npm](https://www.npmjs.com/package/dosyrng)
+- [longbore on npm](https://www.npmjs.com/package/dosyrng)
 
