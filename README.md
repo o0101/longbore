@@ -2,8 +2,7 @@
 
 Memorizable, simple random number generator with up to infinite internal state that pass Dieharder and PractRand. Set the state as big as you want. 
 
-[![https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/dosyrng.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/dosyrng)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/dosyrng/issues)
+**Please consider this primitive insecure as it does not pass SMHasher**.
 
 ## Latest News
 
